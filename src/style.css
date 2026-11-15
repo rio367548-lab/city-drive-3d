@@ -1,0 +1,549 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  background: #080d16;
+  font-synthesis: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% 0%, #17243b 0%, #080d16 65%);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+#app {
+  max-width: 1500px;
+  margin: auto;
+  padding: 24px 5%;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #263246;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 45px;
+  height: 45px;
+  background: #ed493d;
+  border-radius: 10px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+}
+
+.brand h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 19px;
+  letter-spacing: 1px;
+}
+
+.brand h1 span,
+.game-info h2 span,
+.start-content h2 span {
+  color: #ff5145;
+}
+
+.brand small {
+  color: #8592a8;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.status {
+  font-size: 11px;
+  color: #aab7ca;
+  letter-spacing: 1px;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #28d78b;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 0;
+}
+
+.eyebrow {
+  color: #ff6458;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+.game-info h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(23px, 4vw, 34px);
+}
+
+.subtitle {
+  color: #8491a7;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+.lap-box {
+  background: #151f30;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: 1px solid #344258;
+}
+
+.lap-box small {
+  display: block;
+  color: #8b9ab0;
+  font-size: 10px;
+}
+
+.lap-box strong {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 25px;
+}
+
+.lap-box span {
+  color: #8b9ab0;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: min(65vw, 570px);
+  min-height: 340px;
+  overflow: hidden;
+  border: 1px solid #33445c;
+  border-radius: 14px;
+  background: #182b20;
+  box-shadow: 0 20px 70px #0008;
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+}
+
+#game-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hud {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  right: 18px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.speed-card,
+.time-card {
+  background: #08111cdd;
+  border: 1px solid #52607777;
+  border-radius: 10px;
+  padding: 12px 16px;
+  backdrop-filter: blur(8px);
+}
+
+.hud small {
+  color: #9cacc2;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.speed-number {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin: 4px 0 8px;
+}
+
+.speed-number strong {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 30px;
+}
+
+.speed-number span {
+  color: #ff6458;
+  font-size: 10px;
+}
+
+.speed-bar {
+  height: 4px;
+  width: 130px;
+  background: #354052;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#speed-fill {
+  height: 100%;
+  width: 0%;
+  background: #ff5145;
+}
+
+.time-card strong {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 19px;
+  margin-top: 8px;
+}
+
+.start-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #07101bcc;
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+.start-content {
+  padding: 25px;
+}
+
+.start-label {
+  color: #ff6559;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.start-content h2 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(30px, 6vw, 52px);
+  line-height: 1.2;
+  margin: 16px 0;
+}
+
+.start-content p {
+  color: #a7b2c5;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+
+#start-btn {
+  padding: 15px 34px;
+  color: white;
+  background: #ed493d;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+#start-btn:hover {
+  background: #ff6759;
+  transform: translateY(-2px);
+}
+
+#start-btn span {
+  margin-left: 12px;
+}
+
+.start-content > small {
+  display: block;
+  color: #8291a8;
+  font-size: 9px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.bottom-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 22px 0;
+  border-bottom: 1px solid #263246;
+}
+
+.control-guide h3 {
+  color: #aab7ca;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.key-list {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.key-list div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #aab7ca;
+  font-size: 11px;
+}
+
+kbd {
+  padding: 6px 9px;
+  background: #1a2638;
+  border: 1px solid #40516a;
+  border-radius: 5px;
+  color: white;
+  font-weight: 700;
+}
+
+.game-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-actions small,
+.game-actions strong {
+  display: block;
+}
+
+.game-actions small {
+  color: #8997ad;
+  font-size: 9px;
+  margin-bottom: 5px;
+}
+
+.game-actions strong {
+  font-size: 12px;
+}
+
+#reset-btn {
+  padding: 10px 15px;
+  color: white;
+  background: #202d40;
+  border: 1px solid #40516a;
+  border-radius: 6px;
+}
+
+.mobile-controls {
+  display: none;
+}
+
+footer {
+  padding: 22px 0;
+  text-align: center;
+  color: #68768d;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+footer span {
+  color: #ff5145;
+  margin: 0 6px;
+}
+
+.game-message {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 12px;
+  background: #08111cdd;
+  padding: 9px 15px;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+@media (max-width: 700px) {
+  #app {
+    padding: 15px 4%;
+  }
+
+  .status {
+    font-size: 8px;
+  }
+
+  .game-info {
+    padding: 20px 0;
+  }
+
+  .game-area {
+    height: 470px;
+    min-height: 0;
+  }
+
+  .bottom-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .game-actions {
+    justify-content: space-between;
+  }
+
+  .mobile-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .control-btn {
+    width: 55px;
+    height: 45px;
+    color: white;
+    background: #202d40;
+    border: 1px solid #526077;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    touch-action: none;
+  }
+
+  .control-btn:active {
+    background: #ed493d;
+  }
+}
+
+
+/* ==========================================
+   RACE RESULTS SCREEN
+========================================== */
+
+.result-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: none;
+  place-items: center;
+  padding: 20px;
+  background: rgba(5, 10, 19, 0.88);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.result-content {
+  width: 100%;
+  max-width: 500px;
+  padding: 35px 25px;
+  background: linear-gradient(145deg, #17243a, #0b1220);
+  border: 1px solid #46546b;
+  border-radius: 16px;
+  box-shadow: 0 20px 70px #0009;
+}
+
+.result-label {
+  color: #ff6559;
+  font-size: 10px;
+  letter-spacing: 4px;
+}
+
+.result-content h2 {
+  margin: 18px 0 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(25px, 5vw, 38px);
+}
+
+.result-content h2 span {
+  color: #ff5145;
+}
+
+.result-content > p {
+  color: #a7b2c5;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.result-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+.result-stats > div {
+  padding: 18px 10px;
+  background: #202d40;
+  border: 1px solid #40516a;
+  border-radius: 9px;
+}
+
+.result-stats small {
+  display: block;
+  color: #9cacc2;
+  font-size: 9px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.result-stats strong {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(16px, 3vw, 22px);
+}
+
+.result-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#race-again-btn,
+#back-menu-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 7px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+#race-again-btn {
+  color: white;
+  background: #ed493d;
+  border: none;
+}
+
+#race-again-btn:hover {
+  background: #ff6759;
+  transform: translateY(-2px);
+}
+
+#back-menu-btn {
+  color: white;
+  background: #202d40;
+  border: 1px solid #40516a;
+}
+
+#back-menu-btn:hover {
+  background: #30415a;
+}
+

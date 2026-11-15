@@ -1,0 +1,136 @@
+
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d16" />
+    <title>CITY DRIVE 3D | Racing Experience</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-icon">CD</span>
+          <div>
+            <h1>CITY DRIVE <span>3D</span></h1>
+            <small>RACING EXPERIENCE</small>
+          </div>
+        </div>
+        <div class="status">
+          <span class="status-dot"></span>
+          SIMULATOR ONLINE
+        </div>
+      </header>
+
+      <main>
+        <section class="game-info">
+          <div>
+            <p class="eyebrow">WELCOME TO THE TRACK</p>
+            <h2>READY TO <span>RACE?</span></h2>
+            <p class="subtitle">Kendalikan mobilmu dan taklukkan lintasan.</p>
+          </div>
+          <div class="lap-box">
+            <small>LAP</small>
+            <strong id="lap">01</strong>
+            <span>/ 03</span>
+          </div>
+        </section>
+
+        <section class="game-area">
+          <div id="game-container"></div>
+
+          <div class="hud">
+            <div class="speed-card">
+              <small>YOUR SPEED</small>
+              <div class="speed-number">
+                <strong id="speed">0</strong>
+                <span>KM/H</span>
+              </div>
+              <div class="speed-bar">
+                <div id="speed-fill"></div>
+              </div>
+            </div>
+
+            <div class="time-card">
+              <small>RACE TIME</small>
+              <strong id="timer">00:00.0</strong>
+            </div>
+          </div>
+
+          <div class="start-overlay" id="start-overlay">
+            <div class="start-content">
+              <span class="start-label">CITY DRIVE 3D</span>
+              <h2>START YOUR<br /><span>ENGINE</span></h2>
+              <p>Siapkan dirimu untuk pengalaman balap 3D.</p>
+              <button id="start-btn">START RACE <span>→</span></button>
+              <small>WASD / ARROW KEYS TO DRIVE</small>
+            </div>
+          </div>
+
+          <div class="game-message" id="game-message"></div>
+          <div class="result-overlay" id="result-overlay">
+  <div class="result-content">
+    <span class="result-label">CITY DRIVE 3D</span>
+
+    <h2>RACE <span>FINISHED!</span></h2>
+
+    <p>Congratulations! Kamu berhasil menyelesaikan balapan.</p>
+
+    <div class="result-stats">
+      <div>
+        <small>COMPLETED LAPS</small>
+        <strong>03 / 03</strong>
+      </div>
+
+      <div>
+        <small>TOTAL RACE TIME</small>
+        <strong id="final-time">00:00.0</strong>
+      </div>
+    </div>
+
+    <div class="result-buttons">
+      <button id="race-again-btn">RACE AGAIN ↻</button>
+      <button id="back-menu-btn">BACK TO MENU</button>
+    </div>
+  </div>
+</div>
+        </section>
+
+        <section class="bottom-panel">
+          <div class="control-guide">
+            <h3>DRIVING CONTROLS</h3>
+            <div class="key-list">
+              <div><kbd>W</kbd><span>Gas</span></div>
+              <div><kbd>S</kbd><span>Rem</span></div>
+              <div><kbd>A</kbd><span>Kiri</span></div>
+              <div><kbd>D</kbd><span>Kanan</span></div>
+              <div><kbd>R</kbd><span>Reset</span></div>
+            </div>
+          </div>
+
+          <div class="mobile-controls">
+            <button class="control-btn" data-control="left">◀</button>
+            <button class="control-btn" data-control="brake">BRAKE</button>
+            <button class="control-btn" data-control="gas">GAS</button>
+            <button class="control-btn" data-control="right">▶</button>
+          </div>
+
+          <div class="game-actions">
+            <div>
+              <small>VEHICLE</small>
+              <strong>SPORTS CAR</strong>
+            </div>
+            <button id="reset-btn">↻ RESET</button>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        CITY DRIVE 3D <span>•</span> INTERACTIVE 3D RACING SIMULATOR
+      </footer>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
